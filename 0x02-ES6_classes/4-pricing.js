@@ -6,11 +6,11 @@ export default class Pricing {
     this.currency = currency;
   }
 
-  set amount(amount) {
+  set amount(value) {
     if (typeof amount !== 'number') {
-      throw new TypeError('Amount must be a Number');
+      throw new TypeError('Amount must be a number');
     }
-    this._amount = amount;
+    this._amount = value;
   }
 
   get amount() {
