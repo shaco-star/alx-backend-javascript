@@ -1,4 +1,4 @@
-class HolbertonCourse {
+export default class HolbertonCourse {
   constructor(name, length, students) {
     this._name = name;
     this._length = length;
@@ -21,7 +21,7 @@ class HolbertonCourse {
   }
 
   set length(size) {
-    if (typeof name !== 'number') {
+    if (typeof size !== 'number') {
       throw new TypeError('Lenght need to be Integer');
     }
     this._length = size;
@@ -31,7 +31,11 @@ class HolbertonCourse {
     return this._students;
   }
 
-  set students(student) {
-    this._students = student;
+  set students(students) {
+    if (students instanceof Array) {
+      this._students = students;
+    } else {
+      throw new TypeError('Students must be an Array');
+    }
   }
 }
