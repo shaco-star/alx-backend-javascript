@@ -9,11 +9,11 @@ export default class HolbertonCourse {
     return this._name;
   }
 
-  set name(name) {
-    if (typeof name !== 'string') {
+  set name(value) {
+    if (typeof value !== 'string') {
       throw new TypeError('Name need to be sting');
     }
-    this._name = name;
+    this._name = value;
   }
 
   get length() {
@@ -31,9 +31,9 @@ export default class HolbertonCourse {
     return this._students;
   }
 
-  set students(students) {
-    if (students instanceof Array) {
-      this._students = students;
+  set students(value) {
+    if (value instanceof Array) {
+      this._students = value;
     } else {
       throw new TypeError('Students must be an Array');
     }
