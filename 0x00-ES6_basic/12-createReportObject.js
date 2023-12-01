@@ -1,6 +1,8 @@
-export default function appendToEachArrayValue(array, appendString) {
-  for (const [idx, value] of array.entries()) {
-    array[idx] = appendString + value;
-  }
-  return array;
+export default function createReportObject(employeesList) {
+  return {
+    allEmployees: employeesList,
+    getNumberOfDepartments(employeesList) {
+      return Object.keys(employeesList).length;
+    },
+  };
 }
